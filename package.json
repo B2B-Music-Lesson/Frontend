@@ -1,0 +1,22 @@
+{
+  "name": "apollo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B2B-Music-Lesson/Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B2B-Music-Lesson/Frontend/issues"
+  },
+  "homepage": "https://github.com/B2B-Music-Lesson/Frontend#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.0"
+  }
+}
