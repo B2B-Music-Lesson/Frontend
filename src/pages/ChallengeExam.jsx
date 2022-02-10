@@ -1,14 +1,24 @@
-import { React } from "react";
-import { ActionBanner } from ".";
+import React, { useState } from 'react';
+import FlashcardList from './FlashcardList';
+import '../App.css'
 
 function ChallengeExam() {
+  const [flashcards, setFlashcards] = useState([{
+    "question": "What is C#?",
+    "answer": "a note"
+  }, {
+    "question": "Who was mozart?",
+    "answer": "A famous musician"
+  }, {
+    "question": "Does this card flip?",
+    "answer": "Oh yes it does"
+  }])
   return (
-    <div className="home">
-     <ActionBanner
-     headerText="Welcome to the Challenge Exam Page"
-     />
-    
-    </div>
+    <>
+      <div className="container">
+        <FlashcardList flashcards={flashcards} />
+      </div>
+    </>
   );
 }
 
