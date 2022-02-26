@@ -5,8 +5,8 @@ function Home() {
   return (
     <div className="home">
      <ActionBanner
-     headerText="Welcome to the Home Page"
-     subText="lets create something cool"
+     headerText="Apollo"
+     subText="Flashcards for interactive learning of music theory"
      />
     
     </div>
