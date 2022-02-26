@@ -1,5 +1,6 @@
 import { React } from "react";
 import { ActionBanner } from ".";
+import { createUser } from "../network/ServerFacde"
 
 function Login() {
   return (
@@ -25,13 +26,13 @@ function Login() {
       <input type="text" id="firstName" class="form-control" placeholder="First Name" required="" autofocus=""/>
       <label for="lastName" class="sr-only">Last Name</label>
       <input type="text" id="lastName" class="form-control" placeholder="Last Name" required="" autofocus=""/>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus=""/>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""/>
+      <label for="email" class="sr-only">Email address</label>
+      <input type="email" id="email" class="form-control" placeholder="Email address" required="" autofocus=""/>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Password" required=""/>
       <div class="checkbox mb-3">
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" onClick={createUser}>Register</button>
     </form>
       </div>
    
