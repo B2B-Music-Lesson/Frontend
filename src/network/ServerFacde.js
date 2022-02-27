@@ -39,7 +39,7 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
 export async function getUser(user, password) {
         console.log("getUser");
         console.log(user, password);
-        const response = await axios.post(URL + '/user' + "?user_id=" + user, {
+        const response = await axios.post(URL + '/user?user_id=' + user, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
