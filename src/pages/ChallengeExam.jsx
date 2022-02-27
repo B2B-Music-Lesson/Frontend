@@ -14,11 +14,11 @@ function ChallengeExam() {
     "answer": "Oh yes it does"
   }])
   return (
-    <>
+    <div className='challengeExam'>
       <div className="container">
         <FlashcardList flashcards={flashcards} />
       </div>
-    </>
+    </div>
   );
 }
 

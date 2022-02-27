@@ -3,7 +3,7 @@ import { ActionBanner, Card } from ".";
 
 function Challenges() {
   return (
-    <div className="home">
+    <div className="challenge">
       <ActionBanner headerText="Welcome to the Challenges Page" />
       {/* Cards */}
       {/* Make sure each item in a row is a card */}

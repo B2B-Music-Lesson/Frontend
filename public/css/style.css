@@ -7,7 +7,16 @@
   border-bottom: 2px solid #0275d8 ;
 }
 /* Home Page */
-body {
+.bg-blue-gradient{
+  background: rgb(10,10,198);
+  background: linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%);}
+.login {
+  padding-top: 55px;
+}
+.challenge {
+  padding-top: 55px;
+}
+.challengeExam {
   padding-top: 55px;
 }
 /* designing title and tag line */
