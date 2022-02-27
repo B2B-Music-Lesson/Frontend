@@ -16,37 +16,38 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
         throw new Error("Email must not be empty");
     }
 
-    const body =  {
+    const body = {
         user_id: user_id,
         password: password,
         is_teacher: false,
         email: email
-      };
+    };
     try {
         console.log('laksdjflk')
         const response = await axios.post(URL + '/createUser', body, {
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Access-Control-Allow-Origin": "*",
             },
             crossDomain: true,
         });
         console.log(response);
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 }
 export async function getUser(user, password) {
-        console.log("getUser");
-        console.log(user, password);
-        const sendGetRequest = async () => {
-            try {
-                const resp = await axios.get(URL + '/user?user_id=' + user + '&password=' + password);
-                console.log(resp.data);
-            } catch (err) {
-                // Handle Error Here
-                console.error(err);
-            }
-        };
-        sendGetRequest();
+    console.log("getUser");
+    console.log(user, password);
+    const sendGetRequest = async () => {
+        try {
+            const resp = await axios.get(URL + '/user?user_id=' + user + '&password=' + password);
+            console.log(resp.data);
+        } catch (err) {
+            // Handle Error Here
+            console.error(err);
+        }
+    };
+    sendGetRequest();
 }
