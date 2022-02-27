@@ -25,7 +25,7 @@ function Login() {
             class="form-control"
             required=""
           autofocus=""
-          onChange={(e)=> setUserName(e)}
+          onChange={(e) => setUserName(e.target.value)}
           />
           <label for="inputPassword" class="sr-only">
             Password
@@ -36,14 +36,15 @@ function Login() {
             class="form-control"
             placeholder="Password"
           required=""
-          onChange={(e)=> setPassword(e)}
+          onChange={(e)=> setPassword(e.target.value)}
           />
           <div class="checkbox mb-3"></div>
           <button class="btn btn-lg btn-primary btn-block" onClick={() =>
             getUser(user, password)
           }>
             Sign in
-          </button>
+        </button>
+      
         <h1>OR</h1>
         <h1 class="h3 mb-3 font-weight-normal">Register</h1>
         <label for="firstName" class="sr-only">

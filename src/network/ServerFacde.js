@@ -48,4 +48,5 @@ export async function getUser(user, password) {
                 console.error(err);
             }
         };
+        sendGetRequest();
 }
