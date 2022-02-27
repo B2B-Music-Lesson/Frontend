@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { ActionBanner } from ".";
-import { createUser } from "../network/ServerFacde";
+import { createUser, getUser } from "../network/ServerFacde";
 
 function Login() {
   const [firstName, setFirstName] = useState("");
@@ -8,23 +8,24 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [is_teacher] = useState(false);
+  const [user, setUserName] = useState("");
 
   return (
     <div className="login">
       <ActionBanner headerText="Welcome to the Login Page" />
       <div className="loginForm">
-        <form class="form-signin">
           <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-          <label for="inputEmail" class="sr-only">
-            Email address
+        <label for="inputEmail" class="sr-only">
+          {/* firstname + lastname (tolowercase) */}
+            User ID
           </label>
           <input
-            type="email"
-            id="inputEmail"
+            type="userName"
+            id="inputUserName"
             class="form-control"
-            placeholder="Email address"
             required=""
-            autofocus=""
+          autofocus=""
+          onChange={(e)=> setUserName(e)}
           />
           <label for="inputPassword" class="sr-only">
             Password
@@ -34,13 +35,15 @@ function Login() {
             id="inputPassword"
             class="form-control"
             placeholder="Password"
-            required=""
+          required=""
+          onChange={(e)=> setPassword(e)}
           />
           <div class="checkbox mb-3"></div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
+          <button class="btn btn-lg btn-primary btn-block" onClick={() =>
+            getUser(user, password)
+          }>
             Sign in
           </button>
-        </form>
         <h1>OR</h1>
         <h1 class="h3 mb-3 font-weight-normal">Register</h1>
         <label for="firstName" class="sr-only">

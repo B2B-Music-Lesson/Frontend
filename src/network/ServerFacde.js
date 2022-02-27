@@ -39,12 +39,13 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
 export async function getUser(user, password) {
         console.log("getUser");
         console.log(user, password);
-        const response = await axios.get(URL + '/user?user_id=' + user, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            crossDomain: true,
-        });
-        console.log(response);
+        const sendGetRequest = async () => {
+            try {
+                const resp = await axios.get(URL + '/user?user_id=' + user + '&password=' + password);
+                console.log(resp.data);
+            } catch (err) {
+                // Handle Error Here
+                console.error(err);
+            }
+        };
 }
