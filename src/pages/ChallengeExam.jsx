@@ -12,7 +12,23 @@ function ChallengeExam() {
   }, {
     "question": "Does this card flip?",
     "answer": "Oh yes it does"
-  }])
+  }, {
+    "question": "Who was mozart?",
+    "answer": "A famous musician"
+  }, {
+    "question": "Who was mozart?",
+    "answer": "A famous musician"
+  }, {
+    "question": "Who was mozart?",
+    "answer": "A famous musician"
+  }, {
+    "question": "Who was mozart?",
+    "answer": "A famous musician"
+  }, {
+    "question": "Who was mozart?",
+    "answer": "A famous musician"
+  }
+])
   return (
     <div className='challengeExam'>
       <div className="container">
