@@ -29,6 +29,8 @@ function Login() {
       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus=""/>
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""/>
+      <input type="radio" value="Student" name="Type" /> Student
+      <input type="radio" value="Teacher" name="Type" /> Teacher
       <div class="checkbox mb-3">
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
