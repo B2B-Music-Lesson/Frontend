@@ -4,8 +4,26 @@ import "../App.css";
 import AnswerButtons from "../components/NotesQuiz/AnswerButtons";
 import ResponseBox from "../components/NotesQuiz/ResponseBox";
 import SheetMusic from "react-sheet-music";
+import { Piano, KeyboardShortcuts, MidiNumbers } from "react-piano";
+import "react-piano/dist/styles.css";
+
+import SoundfontProvider from "./SoundfontProvider";
 
 const ChallengeExam = () => {
+  const noteRange = {
+    first: MidiNumbers.fromNote("c3"),
+    last: MidiNumbers.fromNote("b3"),
+  };
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  const soundfontHostname = "https://d1pzp51pvbm36p.cloudfront.net";
+  const firstNote = MidiNumbers.fromNote("c3");
+  const lastNote = MidiNumbers.fromNote("f5");
+  const keyboardShortcuts = KeyboardShortcuts.create({
+    firstNote: firstNote,
+    lastNote: lastNote,
+    keyboardConfig: KeyboardShortcuts.HOME_ROW,
+  });
+
   const EXPLANATIONS = {
     F: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the first space will be F",
     A: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the second space will be A",
@@ -14,11 +32,11 @@ const ChallengeExam = () => {
   };
 
   const NOTATIONS = {
-    F:"F",
-    A:"A",
-    C:"c",
-    E:"e"
-  }
+    F: "F",
+    A: "A",
+    C: "c",
+    E: "e",
+  };
 
   const QUESTIONS = ["F", "A", "E", "C", "A", "F", "E", "F", "C", "A"];
 
@@ -33,6 +51,13 @@ const ChallengeExam = () => {
     setSelected("none");
   }, [questionNumber]);
 
+  // this saves the note played 
+  // it uses the midinumber format
+  //we will need to convert midinumber to actual key
+  const saveNote = (note) => {
+    console.log(note + " was saved as the answer")
+  }
+
   return (
     <ExamWrapper>
       <ExamTitle>Treble Clef Space Notes</ExamTitle>
@@ -41,7 +66,11 @@ const ChallengeExam = () => {
       </QuestionNumber>
       <QuestionContent>
         <MusicWrapper>
-          <SheetMusic notation={`|${NOTATIONS[answer]}2|`} scale={3} responsive="resize"/>
+          <SheetMusic
+            notation={`|${NOTATIONS[answer]}2|`}
+            scale={3}
+            responsive="resize"
+          />
         </MusicWrapper>
       </QuestionContent>
       <AnswerButtons
@@ -74,6 +103,21 @@ const ChallengeExam = () => {
           explanation={EXPLANATIONS[answer]}
         ></ResponseBox>
       )}
+      <SoundfontProvider
+        instrumentName="acoustic_grand_piano"
+        audioContext={audioContext}
+        hostname={soundfontHostname}
+        render={({ isLoading, playNote, stopNote }) => (
+          <Piano
+            noteRange={noteRange}
+            width={600}
+            playNote={playNote}
+            stopNote={stopNote}
+            keyboardShortcuts={keyboardShortcuts}
+            onPlayNoteInput={(midiNumber) => saveNote(midiNumber)}
+          />
+        )}
+      />
     </ExamWrapper>
   );
 };
