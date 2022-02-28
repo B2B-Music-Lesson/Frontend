@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import FlashcardList from "./FlashcardList";
 import styled from "styled-components";
 import "../App.css";
 import AnswerButtons from "../components/NotesQuiz/AnswerButtons";
-import { COLORS } from "../constants";
 import ResponseBox from "../components/NotesQuiz/ResponseBox";
+import SheetMusic from "react-sheet-music";
 
 const ChallengeExam = () => {
   const EXPLANATIONS = {
@@ -13,6 +12,13 @@ const ChallengeExam = () => {
     C: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the third space will be C",
     E: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the fourth space will be E",
   };
+
+  const NOTATIONS = {
+    F:"F",
+    A:"A",
+    C:"c",
+    E:"e"
+  }
 
   const QUESTIONS = ["F", "A", "E", "C", "A", "F", "E", "F", "C", "A"];
 
@@ -30,9 +36,13 @@ const ChallengeExam = () => {
   return (
     <ExamWrapper>
       <ExamTitle>Treble Clef Space Notes</ExamTitle>
-      <QuestionNumber>Question {questionNumber + 1} / {QUESTIONS.length}:</QuestionNumber>
+      <QuestionNumber>
+        Question {questionNumber + 1} / {QUESTIONS.length}:
+      </QuestionNumber>
       <QuestionContent>
-        picture of treble clef staff and a half note {answer}
+        <MusicWrapper>
+          <SheetMusic notation={`|${NOTATIONS[answer]}2|`} scale={3} responsive="resize"/>
+        </MusicWrapper>
       </QuestionContent>
       <AnswerButtons
         answer={answer}
@@ -48,18 +58,20 @@ const ChallengeExam = () => {
         {answerHidden ? (
           <BaseButton onClick={() => setAnswerHidden(false)}>SUBMIT</BaseButton>
         ) : (
-          <BaseButton onClick={() => {
-            setQuestionNumber(prev => prev + 1);
-          }}>{"NEXT ->"}</BaseButton>
+          <BaseButton
+            onClick={() => {
+              setQuestionNumber((prev) => prev + 1);
+            }}
+          >
+            {"NEXT ->"}
+          </BaseButton>
         )}
       </ExamFooter>
       {!answerHidden && (
         <ResponseBox
           answer={answer}
           guess={selected}
-          explanation={
-            EXPLANATIONS[answer]
-          }
+          explanation={EXPLANATIONS[answer]}
         ></ResponseBox>
       )}
     </ExamWrapper>
@@ -94,6 +106,12 @@ const QuestionContent = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
+`;
+
+const MusicWrapper = styled.div`
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const ExamFooter = styled.div`

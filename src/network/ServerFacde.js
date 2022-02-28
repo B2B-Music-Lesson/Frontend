@@ -33,7 +33,7 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
         });
         console.log(response);
     } catch(error) {
-        console.log(error);
+        console.log({error});
     }
 }
 export async function getUser(user, password) {
