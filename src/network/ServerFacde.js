@@ -42,10 +42,10 @@ export async function getUser(user, password) {
         const sendGetRequest = async () => {
             try {
                 const resp = await axios.get(URL + '/user?user_id=' + user + '&password=' + password);
-                console.log(resp.data);
+                console.log({resp});
             } catch (err) {
                 // Handle Error Here
-                console.error(err);
+                console.error({err});
             }
         };
         sendGetRequest();
