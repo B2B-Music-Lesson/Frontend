@@ -3,8 +3,7 @@ import { useState } from "react";
 import { COLORS } from "../../constants";
 import styled from "styled-components";
 
-const AnswerButtons = ({ answer, answerHidden }) => {
-  const [selected, setSelected] = useState("meow");
+const AnswerButtons = ({ answer, answerHidden, selected, setSelected }) => {
 
   return (
     <AnswerButtonsWrapper>
@@ -84,7 +83,11 @@ const AnswerButton = ({
   }
 
   return (
-    <Component onClick={() => setSelected(noteName)}>{noteName}</Component>
+    <Component onClick={() => {
+       if (answerHidden) {
+          setSelected(noteName);
+       }
+    } }>{noteName}</Component>
   );
 };
 
@@ -113,7 +116,7 @@ const AnswerButtonBase = styled.div`
 const AnswerButtonSelected = styled(AnswerButtonBase)`
   background-color: ${COLORS.LightYellow};
   color: ${COLORS.DarkYellow};
-  border: 2px solid ${COLORS.DarkYellow};
+  /* border: 2px solid ${COLORS.DarkYellow}; */
   &:hover {
     background-color: ${COLORS.LightYellow};
   }

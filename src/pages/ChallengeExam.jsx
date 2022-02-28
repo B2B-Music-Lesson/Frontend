@@ -1,34 +1,70 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FlashcardList from "./FlashcardList";
 import styled from "styled-components";
 import "../App.css";
 import AnswerButtons from "../components/NotesQuiz/AnswerButtons";
 import { COLORS } from "../constants";
+import ResponseBox from "../components/NotesQuiz/ResponseBox";
 
 const ChallengeExam = () => {
+  const EXPLANATIONS = {
+    F: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the first space will be F",
+    A: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the second space will be A",
+    C: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the third space will be C",
+    E: "F-A-C-E spells out the four spaces of the treble clef from bottom to top, so the fourth space will be E",
+  };
 
-  const [answer, setAnswer] = useState("A");
+  const QUESTIONS = ["F", "A", "E", "C", "A", "F", "E", "F", "C", "A"];
+
+  const [questionNumber, setQuestionNumber] = useState(0);
+  const [answer, setAnswer] = useState(QUESTIONS[questionNumber]);
   const [answerHidden, setAnswerHidden] = useState(true);
-  
+  const [selected, setSelected] = useState("none");
+
+  useEffect(() => {
+    setAnswerHidden(true);
+    setAnswer(QUESTIONS[questionNumber]);
+    setSelected("none");
+  }, [questionNumber]);
+
   return (
     <ExamWrapper>
       <ExamTitle>Treble Clef Space Notes</ExamTitle>
-      <QuestionNumber>Question 1:</QuestionNumber>
+      <QuestionNumber>Question {questionNumber + 1} / {QUESTIONS.length}:</QuestionNumber>
       <QuestionContent>
-        picture of treble clef staff and a half note A
+        picture of treble clef staff and a half note {answer}
       </QuestionContent>
-      <AnswerButtons answer={answer} answerHidden={answerHidden}/>
+      <AnswerButtons
+        answer={answer}
+        answerHidden={answerHidden}
+        selected={selected}
+        setSelected={setSelected}
+      />
       <ExamFooter>
         <ProgressBar>
           --------------- progress bar goes here
           ----------------------------------
         </ProgressBar>
-        <SubmitButton onClick={() => setAnswerHidden(false)}>SUBMIT</SubmitButton>
+        {answerHidden ? (
+          <BaseButton onClick={() => setAnswerHidden(false)}>SUBMIT</BaseButton>
+        ) : (
+          <BaseButton onClick={() => {
+            setQuestionNumber(prev => prev + 1);
+          }}>{"NEXT ->"}</BaseButton>
+        )}
       </ExamFooter>
-      <ResponseBox>Success!</ResponseBox>
+      {!answerHidden && (
+        <ResponseBox
+          answer={answer}
+          guess={selected}
+          explanation={
+            EXPLANATIONS[answer]
+          }
+        ></ResponseBox>
+      )}
     </ExamWrapper>
   );
-}
+};
 
 const ExamWrapper = styled.div`
   display: grid;
@@ -60,7 +96,6 @@ const QuestionContent = styled.div`
   background-color: white;
 `;
 
-
 const ExamFooter = styled.div`
   display: flex;
   justify-content: space-between;
@@ -73,7 +108,7 @@ const ProgressBar = styled.div`
   letter-spacing: 1px;
   border-radius: 4px;
 `;
-const SubmitButton = styled.button`
+const BaseButton = styled.button`
   cursor: pointer;
   background-color: hsl(225deg, 15%, 15%);
   border: none;
@@ -84,16 +119,6 @@ const SubmitButton = styled.button`
   &:hover {
     background-color: hsl(225deg, 15%, 20%);
   }
-`;
-const ResponseBox = styled.div`
-  background-color: ${COLORS.LightGreen};
-  color: ${COLORS.DarkGreen};
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  padding: 12px 24px;
-  margin-top: 16px;
-  margin-bottom: 16px;
 `;
 
 export default ChallengeExam;
