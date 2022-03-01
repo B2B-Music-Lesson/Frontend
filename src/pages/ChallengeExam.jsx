@@ -126,7 +126,6 @@ const ChallengeExam = () => {
 
 
 const ExamWrapper = styled.div`
-  min-height: 80vw;
   display: grid;
   grid-template-columns: 1fr min(80ch, 100%) 1fr;
   height: 100%;
