@@ -106,3 +106,10 @@
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
+  /* background-color: linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%); */
+  .wrapper{
+    width: 40vw;
+  }
+  .barCompleted{
+    background-color: black;
+  }

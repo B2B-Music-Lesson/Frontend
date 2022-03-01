@@ -6,6 +6,7 @@ import ResponseBox from "../components/NotesQuiz/ResponseBox";
 import SheetMusic from "react-sheet-music";
 import { Piano, KeyboardShortcuts, MidiNumbers } from "react-piano";
 import "react-piano/dist/styles.css";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 import SoundfontProvider from "./SoundfontProvider";
 
@@ -51,12 +52,12 @@ const ChallengeExam = () => {
     setSelected("none");
   }, [questionNumber]);
 
-  // this saves the note played 
+  // this saves the note played
   // it uses the midinumber format
   //we will need to convert midinumber to actual key
   const saveNote = (note) => {
-    console.log(note + " was saved as the answer")
-  }
+    console.log(note + " was saved as the answer");
+  };
 
   return (
     <ExamWrapper>
@@ -80,10 +81,11 @@ const ChallengeExam = () => {
         setSelected={setSelected}
       />
       <ExamFooter>
-        <ProgressBar>
-          --------------- progress bar goes here
-          ----------------------------------
-        </ProgressBar>
+        <ProgressBar
+          completed={questionNumber * 10}
+          className="wrapper"
+          bgColor="linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%)"
+        />
         {answerHidden ? (
           <BaseButton onClick={() => setAnswerHidden(false)}>SUBMIT</BaseButton>
         ) : (
@@ -122,7 +124,9 @@ const ChallengeExam = () => {
   );
 };
 
+
 const ExamWrapper = styled.div`
+  min-height: 80vw;
   display: grid;
   grid-template-columns: 1fr min(80ch, 100%) 1fr;
   height: 100%;
@@ -164,12 +168,12 @@ const ExamFooter = styled.div`
   align-items: center;
 `;
 
-const ProgressBar = styled.div`
-  border: 2px solid black;
-  padding: 0px 16px;
-  letter-spacing: 1px;
-  border-radius: 4px;
-`;
+// const ProgressBar = styled.div`
+//   border: 2px solid black;
+//   padding: 0px 16px;
+//   letter-spacing: 1px;
+//   border-radius: 4px;
+// `;
 const BaseButton = styled.button`
   cursor: pointer;
   background-color: hsl(225deg, 15%, 15%);
