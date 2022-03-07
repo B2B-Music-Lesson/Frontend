@@ -52,11 +52,69 @@ const ChallengeExam = () => {
     setSelected("none");
   }, [questionNumber]);
 
+  const noteEnum = {
+    C3: 48,
+    C3_SHARP: 49,
+    D3: 50,
+    D3_SHARP: 51,
+    E3: 52,
+    F3: 53,
+    F3_SHARP: 54,
+    G3: 55,
+    G3_SHARP: 56,
+    A3: 57,
+    A3_SHARP: 58,
+    B3: 59,
+  }
   // this saves the note played
   // it uses the midinumber format
   //we will need to convert midinumber to actual key
   const saveNote = (note) => {
-    console.log(note + " was saved as the answer");
+    let tempNote = 'none'
+    switch (note) {
+      case noteEnum.C3:
+        tempNote = 'C'
+      break;
+      case noteEnum.C3_SHARP:
+        tempNote = 'C#'
+      break;
+      case noteEnum.D3:
+        tempNote = 'D'
+      break;
+      case noteEnum.D3_SHARP:
+        tempNote = 'D#'
+      break;
+      case noteEnum.E3:
+        tempNote = 'E'
+      break;
+      case noteEnum.F3:
+        tempNote = 'F'
+      break;
+      case noteEnum.F3_SHARP:
+        tempNote = 'F#'
+      break;
+      case noteEnum.G3:
+        tempNote = 'G'
+      break;
+      case noteEnum.G3_SHARP:
+        tempNote = 'G#'
+      break;
+      case noteEnum.A3:
+        tempNote = 'A'
+      break;
+      case noteEnum.A3_SHARP:
+        tempNote = 'A#'
+      break;
+      case noteEnum.B3:
+        tempNote = 'B'
+      break;
+      default:
+        tempNote = 'none'
+        break;
+    } 
+    setSelected(tempNote);   
+    console.log(tempNote + " was saved as the answer");
+
   };
 
   return (
