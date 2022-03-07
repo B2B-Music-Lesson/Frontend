@@ -65,56 +65,55 @@ const ChallengeExam = () => {
     A3: 57,
     A3_SHARP: 58,
     B3: 59,
-  }
+  };
   // this saves the note played
   // it uses the midinumber format
   //we will need to convert midinumber to actual key
   const saveNote = (note) => {
-    let tempNote = 'none'
+    let tempNote = "none";
     switch (note) {
       case noteEnum.C3:
-        tempNote = 'C'
-      break;
-      case noteEnum.C3_SHARP:
-        tempNote = 'C#'
-      break;
-      case noteEnum.D3:
-        tempNote = 'D'
-      break;
-      case noteEnum.D3_SHARP:
-        tempNote = 'D#'
-      break;
-      case noteEnum.E3:
-        tempNote = 'E'
-      break;
-      case noteEnum.F3:
-        tempNote = 'F'
-      break;
-      case noteEnum.F3_SHARP:
-        tempNote = 'F#'
-      break;
-      case noteEnum.G3:
-        tempNote = 'G'
-      break;
-      case noteEnum.G3_SHARP:
-        tempNote = 'G#'
-      break;
-      case noteEnum.A3:
-        tempNote = 'A'
-      break;
-      case noteEnum.A3_SHARP:
-        tempNote = 'A#'
-      break;
-      case noteEnum.B3:
-        tempNote = 'B'
-      break;
-      default:
-        tempNote = 'none'
+        tempNote = "C";
         break;
-    } 
-    setSelected(tempNote);   
+      case noteEnum.C3_SHARP:
+        tempNote = "C#";
+        break;
+      case noteEnum.D3:
+        tempNote = "D";
+        break;
+      case noteEnum.D3_SHARP:
+        tempNote = "D#";
+        break;
+      case noteEnum.E3:
+        tempNote = "E";
+        break;
+      case noteEnum.F3:
+        tempNote = "F";
+        break;
+      case noteEnum.F3_SHARP:
+        tempNote = "F#";
+        break;
+      case noteEnum.G3:
+        tempNote = "G";
+        break;
+      case noteEnum.G3_SHARP:
+        tempNote = "G#";
+        break;
+      case noteEnum.A3:
+        tempNote = "A";
+        break;
+      case noteEnum.A3_SHARP:
+        tempNote = "A#";
+        break;
+      case noteEnum.B3:
+        tempNote = "B";
+        break;
+      default:
+        tempNote = "none";
+        break;
+    }
+    setSelected(tempNote);
     console.log(tempNote + " was saved as the answer");
-
   };
 
   return (
@@ -123,6 +122,11 @@ const ChallengeExam = () => {
       <QuestionNumber>
         Question {questionNumber + 1} / {QUESTIONS.length}:
       </QuestionNumber>
+      <ProgressBar
+        completed={questionNumber * 10}
+        className="wrapper"
+        bgColor="linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%)"
+      />
       <QuestionContent>
         <MusicWrapper>
           <SheetMusic
@@ -138,24 +142,6 @@ const ChallengeExam = () => {
         selected={selected}
         setSelected={setSelected}
       />
-      <ExamFooter>
-        <ProgressBar
-          completed={questionNumber * 10}
-          className="wrapper"
-          bgColor="linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%)"
-        />
-        {answerHidden ? (
-          <BaseButton onClick={() => setAnswerHidden(false)}>SUBMIT</BaseButton>
-        ) : (
-          <BaseButton
-            onClick={() => {
-              setQuestionNumber((prev) => prev + 1);
-            }}
-          >
-            {"NEXT ->"}
-          </BaseButton>
-        )}
-      </ExamFooter>
       {!answerHidden && (
         <ResponseBox
           answer={answer}
@@ -163,27 +149,42 @@ const ChallengeExam = () => {
           explanation={EXPLANATIONS[answer]}
         ></ResponseBox>
       )}
-      <SoundfontProvider
-        instrumentName="acoustic_grand_piano"
-        audioContext={audioContext}
-        hostname={soundfontHostname}
-        render={({ isLoading, playNote, stopNote }) => (
-          <Piano
-            noteRange={noteRange}
-            width={600}
-            playNote={playNote}
-            stopNote={stopNote}
-            keyboardShortcuts={keyboardShortcuts}
-            onPlayNoteInput={(midiNumber) => saveNote(midiNumber)}
-          />
-        )}
-      />
+      <ExamFooter>
+        <SoundfontProvider
+          instrumentName="acoustic_grand_piano"
+          audioContext={audioContext}
+          hostname={soundfontHostname}
+          render={({ isLoading, playNote, stopNote }) => (
+            <Piano
+              disabled={!answerHidden}
+              noteRange={noteRange}
+              width={600}
+              playNote={playNote}
+              stopNote={stopNote}
+              keyboardShortcuts={keyboardShortcuts}
+              onPlayNoteInput={(midiNumber) => saveNote(midiNumber)}
+            />
+          )}
+        />
+              {answerHidden ? (
+        <BaseButton onClick={() => setAnswerHidden(false)}>SUBMIT</BaseButton>
+      ) : (
+        <BaseButton
+          onClick={() => {
+            setQuestionNumber((prev) => prev + 1);
+          }}
+        >
+          {"NEXT >"}
+        </BaseButton>
+      )}
+      </ExamFooter>
+
     </ExamWrapper>
   );
 };
 
-
 const ExamWrapper = styled.div`
+  padding-top: 10vh;
   display: grid;
   grid-template-columns: 1fr min(80ch, 100%) 1fr;
   height: 100%;
