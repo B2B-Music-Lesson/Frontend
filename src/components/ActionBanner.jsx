@@ -2,8 +2,8 @@ import React from "react";
 
 function ActionBanner(props) {
   return (
-    <div>
-      <div class="text-center bg-white ">
+    <div className="action-banner">
+      <div class="text-center bg-transparent "  >
         <br />
         <h1 class="display-4">{props.headerText}</h1>
         <p class="lead"></p>
