@@ -15,6 +15,7 @@ function Challenges() {
             <Card 
             id={challenge.id} 
             key={challenge.id} 
+            image={challenge.image}
             title={challenge.title} 
             subtext={challenge.subtext} 
             buttonText={challenge.buttonText} 
