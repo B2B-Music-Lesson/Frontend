@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Card(props, {image}) {
+// image={require("../images/" + image.filePath.replaceAll('\n','\\u003cbr\\u003e'))}
+function Card(props) {
   return (
     <div className="cardHolder">
       <div class="card p-4 bg-white">
-        <img class="card-img-top" src={image} alt="Challenge Exam" />
+        <img class="card-img-top" src={props.image} alt="Challenge Exam" />
         <div class="card-body  ">
           <h5 class="card-title">{props.title}</h5>
           <p class="card-text">{props.subtext}</p>

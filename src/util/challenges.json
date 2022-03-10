@@ -3,7 +3,7 @@
     "challenges": [
         {
             "id": 1,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #1",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -12,7 +12,7 @@
         },
         {
             "id": 2,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #2",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -21,7 +21,7 @@
         },
         {
             "id": 3,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #3",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -30,7 +30,7 @@
         },
         {
             "id": 4,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #4",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -39,7 +39,7 @@
         },
         {
             "id": 5,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #5",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -48,7 +48,7 @@
         },
         {
             "id": 6,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #6",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -57,7 +57,7 @@
         },
         {
             "id": 7,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #7",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -66,7 +66,7 @@
         },
         {
             "id": 8,
-            "image": "../util/assets/piano.jpeg",
+            "image": "piano.jpeg",
             "title": "Challenge Exam #8",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",

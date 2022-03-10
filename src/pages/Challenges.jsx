@@ -15,7 +15,7 @@ function Challenges() {
             <Card 
             id={challenge.id} 
             key={challenge.id} 
-            image={challenge.image}
+            image={require("../util/assets" + challenge.image.replaceAll('\n','\\u003cbr\\u003e'))}
             title={challenge.title} 
             subtext={challenge.subtext} 
             buttonText={challenge.buttonText} 

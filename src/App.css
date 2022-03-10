@@ -97,7 +97,7 @@ body {
   padding: 0;
   margin-top: 0;
   font-family: "Poppins", sans-serif;
-  background-image: url(./util/assets/bg.png);
+  background-image: url(../src/util/assets/bg.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
