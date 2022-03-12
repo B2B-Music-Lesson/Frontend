@@ -22,10 +22,17 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
         email: email
       };
     try {
+        var response;
         if (is_teacher) {
-            //TODO: call /createTeacher
+            response = await axios.post(URL + '/createTeacher', body, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                crossDomain: true,
+            });
         } else {
-            const response = await axios.post(URL + '/createUser', body, {
+            response = await axios.post(URL + '/createUser', body, {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
@@ -33,6 +40,7 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
                 crossDomain: true,
             });
         }
+        console.log(response);
     } catch(error) {
         console.log({error});
     }
@@ -50,4 +58,17 @@ export async function getUser(user, password) {
             }
         };
         sendGetRequest();
+}
+
+export async function getTeachers() {
+    const sendGetRequest = async () => {
+        try {
+            const resp = await axios.get(URL + '/getTeachers');
+            console.log({resp});
+        } catch (err) {
+            // Handle Error Here
+            console.error({err});
+        }
+    };
+    sendGetRequest();
 }
