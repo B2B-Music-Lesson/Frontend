@@ -16,16 +16,18 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
         throw new Error("Email must not be empty");
     }
 
-    const body =  {
-        user_id: user_id,
-        password: password,
-        firstName: firstName,
-        lastName: lastName
-      };
-      
+    
+
     try {
         var response;
         if (is_teacher) {
+            const body =  {
+                user_id: user_id,
+                password: password,
+                firstName: firstName,
+                lastName: lastName,
+            };
+            
             response = await axios.post(URL + '/createTeacher', body, {
                 headers: {
                     'Accept': 'application/json',
@@ -34,6 +36,15 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
                 crossDomain: true,
             });
         } else {
+            const body =  {
+                user_id: user_id,
+                password: password,
+                firstName: firstName,
+                lastName: lastName,
+                quizzes: {},
+                teacher: undefined,
+            };
+
             response = await axios.post(URL + '/createUser', body, {
                 headers: {
                     'Accept': 'application/json',
