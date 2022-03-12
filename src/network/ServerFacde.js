@@ -19,19 +19,20 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
     const body =  {
         user_id: user_id,
         password: password,
-        is_teacher: false,
         email: email
       };
     try {
-        console.log('laksdjflk')
-        const response = await axios.post(URL + '/createUser', body, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            crossDomain: true,
-        });
-        console.log(response);
+        if (is_teacher) {
+            //TODO: call /createTeacher
+        } else {
+            const response = await axios.post(URL + '/createUser', body, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                crossDomain: true,
+            });
+        }
     } catch(error) {
         console.log({error});
     }
