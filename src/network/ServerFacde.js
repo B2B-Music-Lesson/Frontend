@@ -5,7 +5,7 @@ const URL = "https://67oslwoa69.execute-api.us-west-2.amazonaws.com/prod";
 export async function createUser(firstName, lastName, password, is_teacher, email) {
     console.log("createUser");
     console.log(firstName, lastName, password, is_teacher, email);
-    const user_id = firstName.toLowerCase() + lastName.toLowerCase();
+    const user_id = email;
     if (!user_id) {
         throw new Error("Username must not be empty");
     } else if (!password) {
@@ -19,8 +19,10 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
     const body =  {
         user_id: user_id,
         password: password,
-        email: email
+        firstName: firstName,
+        lastName: lastName
       };
+      
     try {
         var response;
         if (is_teacher) {
