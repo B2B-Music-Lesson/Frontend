@@ -11,18 +11,17 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
         throw new Error("Username must not be empty");
     } else if (!password) {
         throw new Error("Password must not be empty");
-    } else if (typeof is_teacher !== 'boolean') {
-        throw new Error("Needs to specifiy a role (Teacher or Student)");
     } 
 
     try {
         var response;
         if (is_teacher) {
             const body =  {
-                user_id: user_id,
+                teacher_id: user_id,
                 password: password,
                 firstName: firstName,
                 lastName: lastName,
+                is_teacher: is_teacher,
             };
 
             response = await axios.post(URL + '/createTeacher', body, {
@@ -55,7 +54,6 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
     }
 }
 
-// FIXME: password no longer needed
 export async function getUser(user, password) {
         console.log("getUser");
         console.log(user, password);
