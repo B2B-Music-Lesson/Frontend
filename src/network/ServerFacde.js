@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = "https://67oslwoa69.execute-api.us-west-2.amazonaws.com/prod";
+const URL = "https://ptgocc9wd0.execute-api.us-west-2.amazonaws.com/prod";
 
 //TODO: Test
 export async function createUser(firstName, lastName, password, is_teacher, email) {
