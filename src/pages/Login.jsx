@@ -10,8 +10,11 @@ function Login() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [is_teacher] = useState(false);
+  const [is_teacher, setTeacher] = useState(false);
   const [user, setUserName] = useState("");
+  const handleOnChange = () => {
+    setTeacher(!is_teacher);
+  };
 
   return (
     <div className="login">
@@ -102,7 +105,10 @@ function Login() {
                 required=""
               />
               <FormGroup>
-                <FormControlLabel control={<Checkbox defaultChecked />} label="Are you a teacher?" />
+                <FormControlLabel control={<Checkbox defaultChecked />}
+                  checked={is_teacher}
+                  onChange={handleOnChange}
+                  label="Are you a teacher?" />
               </FormGroup>
               <button
                 class="btn btn-lg btn-primary btn-block"
