@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { ActionBanner } from ".";
-import { createUser, getUser } from "../network/ServerFacde";
+import { createUser, getUser} from "../network/ServerFacde";
 
 function Login() {
   const [firstName, setFirstName] = useState("");
@@ -16,7 +16,6 @@ function Login() {
       <div className="loginForm">
           <h1 class="h3 mb-3 font-weight-normal">Login</h1>
         <label for="inputEmail" class="sr-only">
-          {/* firstname + lastname (tolowercase) */}
             User ID
           </label>
           <input
