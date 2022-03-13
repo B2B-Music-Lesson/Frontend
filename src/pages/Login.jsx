@@ -21,7 +21,6 @@ function Login() {
           <input
             type="userName"
             id="inputUserName"
-            class="form-control"
             required=""
           autofocus=""
           onChange={(e) => setUserName(e.target.value)}
@@ -32,14 +31,16 @@ function Login() {
           <input
             type="password"
             id="inputPassword"
-            class="form-control"
+
             placeholder="Password"
           required=""
           onChange={(e)=> setPassword(e.target.value)}
           />
-          <div class="checkbox mb-3"></div>
-          <button class="btn btn-lg btn-primary btn-block" onClick={() =>
-            getUser(user, password)
+        <div class="checkbox mb-3"></div>
+        <button class="btn btn-lg btn-primary btn-block" onClick={() => {
+          console.log("Hello")
+          getUser(user, password)
+        }
           }>
             Sign in
         </button>
@@ -52,7 +53,7 @@ function Login() {
         <input
           type="text"
           onChange={(e) => setFirstName(e.target.value)}
-          class="form-control"
+          
           placeholder="First Name"
           required=""
           autofocus=""
@@ -63,7 +64,7 @@ function Login() {
         <input
           type="text"
           onChange={(e) => setLastName(e.target.value)}
-          class="form-control"
+          
           placeholder="Last Name"
           required=""
           autofocus=""
@@ -74,7 +75,7 @@ function Login() {
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
-          class="form-control"
+      
           placeholder="Email address"
           required=""
           autofocus=""
@@ -85,7 +86,7 @@ function Login() {
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
-          class="form-control"
+          
           placeholder="Password"
           required=""
         />
