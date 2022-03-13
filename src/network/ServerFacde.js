@@ -37,6 +37,7 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
                 password: password,
                 firstName: firstName,
                 lastName: lastName,
+                is_teacher: is_teacher,
                 quizzes: {"default": 0},
             };
 
