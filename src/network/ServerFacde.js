@@ -75,7 +75,7 @@ export async function getUser(user, password) {
 export async function setTeacher(user_id, teacher_id) {
     if (!user_id) {
         throw new Error("Username must not be empty");
-    } else if (!teacher) {
+    } else if (!teacher_id) {
         throw new Error("Password must not be empty");
     } 
 
@@ -103,9 +103,7 @@ export async function setTeacher(user_id, teacher_id) {
 export async function setScore(user_id, quizz_id, correctNum, totalNum) {
     if (!user_id) {
         throw new Error("Username must not be empty");
-    } else if (!teacher) {
-        throw new Error("Password must not be empty");
-    } 
+    }
 
     try {
         var response;
