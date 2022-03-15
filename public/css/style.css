@@ -1,18 +1,21 @@
 /* Navigation */
-.nav-item{
-  border-bottom: 2px solid whitesmoke ;
+.nav-item {
+  border-bottom: 2px solid whitesmoke;
   color: #1f4d82;
 }
-.nav-item:hover{
-  border-bottom: 2px solid #0275d8 ;
+.nav-item:hover {
+  border-bottom: 2px solid #0275d8;
 }
 /* Home Page */
-.bg-blue-gradient{
-  background: rgb(10,10,198);
-  background: linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%);}
-.login {
-  padding-top: 55px;
+.bg-blue-gradient {
+  background: rgb(10, 10, 198);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 198, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
+
 .challenge {
   padding-top: 55px;
 }
@@ -57,7 +60,7 @@
   background-color: whitesmoke;
   text-align: center;
 }
-.spacer{
+.spacer {
   height: 100px;
   width: 100%;
 }
@@ -93,7 +96,7 @@
   border-top-right-radius: 0;
 }
 
-.loginForm{
+.loginForm {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -106,10 +109,16 @@
   padding-top: 5vh;
   padding-bottom: 5vh;
 }
-  /* background-color: linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%); */
-  .wrapper{
-    width: 40vw;
-  }
-  .barCompleted{
-    background-color: black;
-  }
+/* background-color: linear-gradient(90deg, rgba(10,10,198,1) 0%, rgba(0,212,255,1) 100%); */
+.wrapper {
+  width: 40vw;
+}
+.barCompleted {
+  background-color: black;
+}
+
+/* Action Banner */
+
+.action-banner {
+  margin-top: 4%;
+}

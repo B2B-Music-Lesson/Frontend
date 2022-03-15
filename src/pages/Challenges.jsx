@@ -1,38 +1,28 @@
 import { React } from "react";
 import { ActionBanner, Card } from ".";
+import challenges from "../util/challenges.json"
 
 function Challenges() {
   return (
-    <div className="challenge">
-      <ActionBanner headerText="Welcome to the Challenges Page" />
+    <div className="challenges-page">
+      
       {/* Cards */}
       {/* Make sure each item in a row is a card */}
       <div class="container">
+      <ActionBanner headerText="Welcome to the Challenges Page" />
         <div class="row row-cols-2 row-cols-lg-3 gb-2 g-lg-3 ">
-        <Card
-            title="Challenge Exam #1"
-            subtext="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante."
-            buttonText="Practice Now"
-            mutedText="Average completion time: 15 minutes"
-          />
-          <Card
-            title="Challenge Exam #2"
-            subtext="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante."
-            buttonText="Practice Now"
-            mutedText="Average completion time: 15 minutes"
-          />
-          <Card
-            title="Challenge Exam #3"
-            subtext="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante."
-            buttonText="Practice Now"
-            mutedText="Average completion time: 15 minutes"
-          />
-          <Card
-            title="Challenge Exam #4"
-            subtext="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante."
-            buttonText="Practice Now"
-            mutedText="Average completion time: 15 minutes"
-          />
+          {challenges.challenges.map(challenge => 
+            <Card 
+            id={challenge.id} 
+            key={challenge.id}
+            type={challenge.type} 
+            title={challenge.title} 
+            subtext={challenge.subtext} 
+            buttonText={challenge.buttonText} 
+            mutedText={challenge.mutedText} 
+            link={challenge.link}
+            />
+          )}
         </div>
       </div>
     </div>
