@@ -6,11 +6,10 @@ function Card(props) {
   return (
     <div className="cardHolder">
       <div class="card p-4 bg-white">
-        <img class="card-img-top" src={props.image} alt="Challenge Exam" />
-        <div class="card-body  ">
+        <div class={`card-body-${props.type}`}>
           <h5 class="card-title">{props.title}</h5>
           <p class="card-text">{props.subtext}</p>
-          <Link to={props.link} onClick={() => window.scrollTo(0, 0)}>
+          <Link to={`/challengeExam/${props.id}`} onClick={() => window.scrollTo(0, 0)}>
             <button href="#" className="stretched-link btn btn-primary mb-3">
               {props.buttonText}
             </button>

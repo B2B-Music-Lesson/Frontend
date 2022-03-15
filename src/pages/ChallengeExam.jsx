@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+
 import "../App.css";
 import AnswerButtons from "../components/NotesQuiz/AnswerButtons";
 import ResponseBox from "../components/NotesQuiz/ResponseBox";
@@ -10,7 +12,12 @@ import ProgressBar from "@ramonak/react-progress-bar";
 
 import SoundfontProvider from "./SoundfontProvider";
 
-const ChallengeExam = () => {
+import challenges from "../util/challenges.json"
+
+const ChallengeExam = (props) => {
+
+  const params = useParams();
+
   const noteRange = {
     first: MidiNumbers.fromNote("c3"),
     last: MidiNumbers.fromNote("b3"),
@@ -39,8 +46,10 @@ const ChallengeExam = () => {
     E: "e",
   };
 
-  const QUESTIONS = ["F", "A", "E", "C", "A", "F", "E", "F", "C", "A"];
+  const index = challenges.challenges.map(obj => obj.id).indexOf(parseInt(params.id))
 
+  let QUESTIONS = challenges.challenges[index].questions
+  
   const [questionNumber, setQuestionNumber] = useState(0);
   const [answer, setAnswer] = useState(QUESTIONS[questionNumber]);
   const [answerHidden, setAnswerHidden] = useState(true);
@@ -184,7 +193,7 @@ const ChallengeExam = () => {
 };
 
 const ExamWrapper = styled.div`
-  padding-top: 10vh;
+  padding-top: 8vh;
   display: grid;
   grid-template-columns: 1fr min(80ch, 100%) 1fr;
   height: 100%;
@@ -222,8 +231,11 @@ const MusicWrapper = styled.div`
 
 const ExamFooter = styled.div`
   display: flex;
-  justify-content: space-between;
+  margin: 4% auto;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  
 `;
 
 // const ProgressBar = styled.div`
@@ -234,6 +246,7 @@ const ExamFooter = styled.div`
 // `;
 const BaseButton = styled.button`
   cursor: pointer;
+  margin-top: 4%;
   background-color: hsl(225deg, 15%, 15%);
   border: none;
   color: white;

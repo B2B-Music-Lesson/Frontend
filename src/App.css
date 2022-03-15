@@ -105,3 +105,25 @@ body {
 .cardHolder {
   margin-bottom: 2%;
 }
+
+.card-body-piano {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(../src/util/assets/piano.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.card-body-violin {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(../src/util/assets/violin.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

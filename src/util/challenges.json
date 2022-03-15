@@ -2,31 +2,31 @@
 {
     "challenges": [
         {
-            "id": 1,
-            "image": "piano.jpeg",
+            "id": 5,
+            "type": "piano1",
             "title": "Challenge Exam #1",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
             "mutedText": "Average completion time: 15 minutes",
-            "link": "/challengeExam"
+            "questions": ["F", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
         },
         {
             "id": 2,
-            "image": "piano.jpeg",
+            "type": "piano2",
             "title": "Challenge Exam #2",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
             "mutedText": "Average completion time: 15 minutes",
-            "link": "/challengeExam"
+            "questions": ["G", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
         },
         {
             "id": 3,
-            "image": "piano.jpeg",
+            "type": "violin1",
             "title": "Challenge Exam #3",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
             "mutedText": "Average completion time: 15 minutes",
-            "link": "/challengeExam"
+            "questions": ["F", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
         }
 
     ]

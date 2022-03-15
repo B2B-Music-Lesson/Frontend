@@ -14,8 +14,8 @@ function Challenges() {
           {challenges.challenges.map(challenge => 
             <Card 
             id={challenge.id} 
-            key={challenge.id} 
-            image={null}
+            key={challenge.id}
+            type={challenge.type} 
             title={challenge.title} 
             subtext={challenge.subtext} 
             buttonText={challenge.buttonText} 
