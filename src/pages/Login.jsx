@@ -1,14 +1,20 @@
 import { React, useState } from "react";
 import { ActionBanner } from ".";
 import { createUser, getUser } from "../network/ServerFacde";
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
 
 function Login() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [is_teacher] = useState(false);
+  const [is_teacher, setTeacher] = useState(false);
   const [user, setUserName] = useState("");
+  const handleOnChange = () => {
+    setTeacher(!is_teacher);
+  };
 
   return (
     <div className="login">
@@ -98,7 +104,12 @@ function Login() {
                 placeholder="Password"
                 required=""
               />
-              <div class="checkbox mb-3"></div>
+              <FormGroup>
+                <FormControlLabel control={<Checkbox defaultChecked />}
+                  checked={is_teacher}
+                  onChange={handleOnChange}
+                  label="Are you a teacher?" />
+              </FormGroup>
               <button
                 class="btn btn-lg btn-primary btn-block"
                 onClick={() =>
