@@ -13,7 +13,7 @@ import challenges from "../util/challenges.json";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ChallengeExam = (props) => {
+const ChallengeExam = () => {
   const notify = () =>
     toast(
       <ResponseBox
@@ -67,7 +67,7 @@ const ChallengeExam = (props) => {
     setAnswerHidden(true);
     setAnswer(QUESTIONS[questionNumber]);
     setSelected("none");
-  }, [questionNumber]);
+  }, [questionNumber, QUESTIONS]);
 
   const noteEnum = {
     C3: 48,
