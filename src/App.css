@@ -101,3 +101,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.cardHolder {
+  margin-bottom: 2%;
+}
