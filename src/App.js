@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {
   Navigation,
   Footer,
@@ -8,7 +8,6 @@ import {
   Challenges,
   ChallengeExam,
 } from "./pages";
-import challenges from "./util/challenges.json";
 
 function App() {
   return (
