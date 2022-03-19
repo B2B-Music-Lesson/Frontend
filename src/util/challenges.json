@@ -3,7 +3,7 @@
     "challenges": [
         {
             "id": 5,
-            "type": "piano1",
+            "type": "piano",
             "title": "Challenge Exam #1",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -12,7 +12,7 @@
         },
         {
             "id": 2,
-            "type": "piano2",
+            "type": "piano",
             "title": "Challenge Exam #2",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
@@ -21,7 +21,7 @@
         },
         {
             "id": 3,
-            "type": "violin1",
+            "type": "violin",
             "title": "Challenge Exam #3",
             "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
             "buttonText": "Practice Now",
