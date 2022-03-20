@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { getUser } from "../network/ServerFacde";
 
@@ -31,12 +32,14 @@ const Login = ({user, password, setUserName, setPassword}) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div class="checkbox mb-3"></div>
+              <Link to="/challenges">
               <button
                 class="btn btn-lg btn-primary btn-block"
                 onClick={() => getUser(user, password)}
               >
                 Sign in
               </button>{" "}
+              </Link>
             </div>
     )
 }
