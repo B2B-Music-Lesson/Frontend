@@ -55,12 +55,45 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
     }
 }
 
-export async function getUser(user, password) {
+//TODO: test
+export async function login(user_id, password, is_teacher) {
+    console.log("login");
+    const body =  {
+        teacher_id: user_id,
+        password: password,
+    };
+
+    try {
+        var response;
+        if (is_teacher) {
+            response = await axios.post(URL + '/loginTeacher', body, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                crossDomain: true,
+            });
+        } else {
+            response = await axios.post(URL + '/login', body, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                crossDomain: true,
+            });
+        }
+        //TODO: return login
+    } catch(error) {
+        console.log({error});
+    }
+}
+
+export async function getUser(user_id) {
         console.log("getUser");
-        console.log(user, password);
+        console.log(user_id);
         const sendGetRequest = async () => {
             try {
-                const resp = await axios.get(URL + '/user?user_id=' + user + '&password=' + password);
+                const resp = await axios.get(URL + '/user?user_id=' + user_id);
                 console.log({resp});
             } catch (err) {
                 // Handle Error Here
@@ -68,6 +101,7 @@ export async function getUser(user, password) {
             }
         };
         sendGetRequest();
+        //TODO: return resp.user?
 }
 
 //TODO: Test

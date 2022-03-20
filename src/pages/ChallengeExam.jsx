@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-
 import "../App.css";
 import AnswerButtons from "../components/NotesQuiz/AnswerButtons";
 import ResponseBox from "../components/NotesQuiz/ResponseBox";
@@ -9,13 +8,20 @@ import SheetMusic from "react-sheet-music";
 import { Piano, KeyboardShortcuts, MidiNumbers } from "react-piano";
 import "react-piano/dist/styles.css";
 import ProgressBar from "@ramonak/react-progress-bar";
-
 import SoundfontProvider from "./SoundfontProvider";
+import challenges from "../util/challenges.json";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import challenges from "../util/challenges.json"
-
-const ChallengeExam = (props) => {
-
+const ChallengeExam = () => {
+  const notify = () =>
+    toast(
+      <ResponseBox
+        answer={answer}
+        guess={selected}
+        explanation={EXPLANATIONS[answer]}
+      ></ResponseBox>
+    );
   const params = useParams();
 
   const noteRange = {
@@ -46,10 +52,12 @@ const ChallengeExam = (props) => {
     E: "e",
   };
 
-  const index = challenges.challenges.map(obj => obj.id).indexOf(parseInt(params.id))
+  const index = challenges.challenges
+    .map((obj) => obj.id)
+    .indexOf(parseInt(params.id));
 
-  let QUESTIONS = challenges.challenges[index].questions
-  
+  let QUESTIONS = challenges.challenges[index].questions;
+
   const [questionNumber, setQuestionNumber] = useState(0);
   const [answer, setAnswer] = useState(QUESTIONS[questionNumber]);
   const [answerHidden, setAnswerHidden] = useState(true);
@@ -59,7 +67,7 @@ const ChallengeExam = (props) => {
     setAnswerHidden(true);
     setAnswer(QUESTIONS[questionNumber]);
     setSelected("none");
-  }, [questionNumber]);
+  }, [questionNumber, QUESTIONS]);
 
   const noteEnum = {
     C3: 48,
@@ -77,7 +85,6 @@ const ChallengeExam = (props) => {
   };
   // this saves the note played
   // it uses the midinumber format
-  //we will need to convert midinumber to actual key
   const saveNote = (note) => {
     let tempNote = "none";
     switch (note) {
@@ -122,11 +129,17 @@ const ChallengeExam = (props) => {
         break;
     }
     setSelected(tempNote);
-    console.log(tempNote + " was saved as the answer");
   };
 
   return (
     <ExamWrapper>
+      <ToastContainer
+        position="top-center"
+        pauseOnHover
+        className="danger"
+        center
+        style={{ width: "50vw"}}
+      />
       <ExamTitle>Treble Clef Space Notes</ExamTitle>
       <QuestionNumber>
         Question {questionNumber + 1} / {QUESTIONS.length}:
@@ -151,13 +164,13 @@ const ChallengeExam = (props) => {
         selected={selected}
         setSelected={setSelected}
       />
-      {!answerHidden && (
+      {/* {!answerHidden && (
         <ResponseBox
           answer={answer}
           guess={selected}
           explanation={EXPLANATIONS[answer]}
         ></ResponseBox>
-      )}
+      )} */}
       <ExamFooter>
         <SoundfontProvider
           instrumentName="acoustic_grand_piano"
@@ -175,19 +188,25 @@ const ChallengeExam = (props) => {
             />
           )}
         />
-              {answerHidden ? (
-        <BaseButton onClick={() => setAnswerHidden(false)}>SUBMIT</BaseButton>
-      ) : (
-        <BaseButton
-          onClick={() => {
-            setQuestionNumber((prev) => prev + 1);
-          }}
-        >
-          {"NEXT >"}
-        </BaseButton>
-      )}
+        {answerHidden ? (
+          <BaseButton
+            onClick={() => {
+              setAnswerHidden(false);
+              notify();
+            }}
+          >
+            SUBMIT
+          </BaseButton>
+        ) : (
+          <BaseButton
+            onClick={() => {
+              setQuestionNumber((prev) => prev + 1);
+            }}
+          >
+            {"NEXT >"}
+          </BaseButton>
+        )}
       </ExamFooter>
-
     </ExamWrapper>
   );
 };
@@ -235,7 +254,6 @@ const ExamFooter = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  
 `;
 
 // const ProgressBar = styled.div`
