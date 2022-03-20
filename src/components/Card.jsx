@@ -11,7 +11,7 @@ function Card(props) {
           <p class="card-text">{props.subtext}</p>
           <Link to={`/challengeExam/${props.id}`} onClick={() => window.scrollTo(0, 0)}>
             <button href="#" className="stretched-link btn btn-primary mb-3">
-              {props.buttonText}
+              Practice Now
             </button>
           </Link>
           <p class="card-text">
