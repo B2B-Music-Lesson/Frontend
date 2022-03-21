@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { getUser } from "../network/ServerFacde";
 import FormGroup from '@mui/material/FormGroup';
@@ -33,6 +34,9 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
                 required=""
                 onChange={(e) => setPassword(e.target.value)}
               />
+
+              <div class="checkbox mb-3"></div>
+              <Link to="/challenges">
                <FormGroup>
                 <FormControlLabel control={<Checkbox defaultChecked />}
                   checked={is_teacher}
@@ -45,6 +49,7 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
               >
                 Sign in
               </button>{" "}
+              </Link>
             </div>
     )
 }
