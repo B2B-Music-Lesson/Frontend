@@ -18,7 +18,7 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..."/></div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://mligt4sbl55l.i.optimole.com/Oez4XDs-qQgSdpWE/w:600/h:350/q:auto/https://www.hillcrestweb.org/wp-content/uploads/2011/09/music-sheet.jpg" alt="..."/></div>
                     </div>
                 </div>
             </header>
@@ -31,22 +31,22 @@ function Home() {
                                 <div class="col mb-5 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
                                     <h2 class="h5">Easy To Use</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <p class="mb-0">Just click on Challenges in the top right corner to begin, and answer the questions.</p>
                                 </div>
                                 <div class="col mb-5 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
                                     <h2 class="h5">Better Learning</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <p class="mb-0">A new interactive learning platform which provides better retention, faster learning, and more fun!</p>
                                 </div>
                                 <div class="col mb-5 mb-md-0 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
                                     <h2 class="h5">Music Reports</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <p class="mb-0">When signed in, teachers can receive reports about their student's progress, helping them stay involved in the learning process.</p>
                                 </div>
                                 <div class="col h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
                                     <h2 class="h5">Enhanced Skills</h2>
-                                    <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                    <p class="mb-0">This unique interactive platform helps students gain music skills greater than traditional learning.</p>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ function Home() {
                     <div class="row gx-5">
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..."/>
+                                <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/414AjNCPkuL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg" alt="..."/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Piano</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="/challengeExam"><h5 class="card-title mb-3">Piano Sight Reading</h5></a>
@@ -105,7 +105,7 @@ function Home() {
                         </div>
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..."/>
+                                <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41O3Bnapl6L._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg" alt="..."/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Trumpet</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="/challengeExam"><h5 class="card-title mb-3">Basics of Trumpet</h5></a>
@@ -125,7 +125,7 @@ function Home() {
                         </div>
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
-                                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..."/>
+                                <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41%2BclXdQkgL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg" alt="..."/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Piano</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="/challengeExam"><h5 class="card-title mb-3">Piano Chords Made Easy</h5></a>

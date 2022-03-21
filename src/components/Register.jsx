@@ -3,6 +3,7 @@ import { createUser} from "../network/ServerFacde";
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { Link } from "react-router-dom";
 
 
 const Register = ({firstName, lastName, password, email, is_teacher, setFirstName, setLastName, setPassword, setEmail, handleOnChange}) => {
@@ -58,7 +59,7 @@ const Register = ({firstName, lastName, password, email, is_teacher, setFirstNam
                   onChange={handleOnChange}
                   label="Are you a teacher?" />
               </FormGroup>
-            
+              <Link to="/challenges">
               <button
                 class="btn btn-lg btn-primary btn-block"
                 onClick={() => {
@@ -69,6 +70,7 @@ const Register = ({firstName, lastName, password, email, is_teacher, setFirstNam
               >
                 Register
               </button>{" "}
+              </Link>
             </div>
     )
 }
