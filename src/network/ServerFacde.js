@@ -63,68 +63,67 @@ export async function createUser(
 
 //TODO: test
 export async function login(user_id, password, is_teacher) {
-    console.log("login");
-    try {
-        var response;
-        if (is_teacher) {
-            const body =  {
-            teacher_id: user_id,
-            password: password,
-            };
-            response = await axios.post(URL + '/loginTeacher?', body, {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                crossDomain: true,
-            });
-            console.log(response);
-        } else {
-              const body =  {
-                user_id: user_id,
-                password: password,
-            };
-            response = await axios.post(URL + '/login?', body, {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                crossDomain: true,
-            });
-            console.log(response);
-        }
-        //TODO: return login
-    } catch(error) {
-        console.log({error});
+  console.log("login");
+  try {
+    var response;
+    if (is_teacher) {
+      const body = {
+        teacher_id: user_id,
+        password: password,
+      };
+      response = await axios.post(URL + "/loginTeacher?", body, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        crossDomain: true,
+      });
+      console.log(response);
+    } else {
+      const body = {
+        user_id: user_id,
+        password: password,
+      };
+      response = await axios.post(URL + "/login?", body, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        crossDomain: true,
+      });
+      console.log(response);
     }
+    //TODO: return login
+  } catch (error) {
+    console.log({ error });
+  }
 }
 
 export async function getUser(user_id, is_teacher) {
-        console.log("getUser");
-        console.log(user_id);
-    if (is_teacher) {
-
-         const sendGetRequest = async () => {
-            try {
-                const resp = await axios.get(URL + '/getTeacher?teacher_id=' + user_id);
-                console.log({resp});
-            } catch (err) {
-                console.error({err});
-            }
-        };
-        sendGetRequest();  
-    }
-    else {
-        const sendGetRequest = async () => {
-            try {
-                const resp = await axios.get(URL + '/user?user_id=' + user_id);
-                console.log({resp});
-            } catch (err) {
-                console.error({err});
-            }
-        };
-        sendGetRequest();  
-    }
+  console.log("getUser");
+  console.log(user_id);
+  if (is_teacher) {
+    const sendGetRequest = async () => {
+      try {
+        const resp = await axios.get(URL + "/getTeacher?teacher_id=" + user_id);
+        console.log({ resp });
+      } catch (err) {
+        console.error({ err });
+      }
+    };
+    sendGetRequest();
+  } else {
+    const sendGetRequest = async () => {
+      try {
+        const resp = await axios.get(URL + "/user?user_id=" + user_id);
+        console.log({ resp });
+        localStorage.setItem("first_name", resp.data.firstName);
+      } catch (err) {
+        console.error({ err });
+      }
+    };
+    sendGetRequest();
+  }
 }
 
 //TODO: Test
