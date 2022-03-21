@@ -1,1 +1,6 @@
 node_modules
+.idea/vcs.xml
+.idea/Frontend.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
