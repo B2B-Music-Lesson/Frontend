@@ -56,39 +56,44 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
 }
 
 //TODO: test
-// export async function login(user_id, password, is_teacher) {
-//     console.log("login");
-//     const body =  {
-//         teacher_id: user_id,
-//         password: password,
-//     };
+export async function login(user_id, password, is_teacher) {
+    console.log("login");
+    try {
+        var response;
+          const body =  {
+            teacher_id: user_id,
+            password: password,
+        };
+        if (is_teacher) {
+            response = await axios.post(URL + '/loginTeacher?', body, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                crossDomain: true,
+            });
+            console.log(response);
+        } else {
+              const body =  {
+                user_id: user_id,
+                password: password,
+            };
+            response = await axios.post(URL + '/login?', body, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                crossDomain: true,
+            });
+            console.log(response);
+        }
+        //TODO: return login
+    } catch(error) {
+        console.log({error});
+    }
+}
 
-//     try {
-//         var response;
-//         if (is_teacher) {
-//             response = await axios.post(URL + '/loginTeacher', body, {
-//                 headers: {
-//                     'Accept': 'application/json',
-//                     'Content-Type': 'application/json'
-//                 },
-//                 crossDomain: true,
-//             });
-//         } else {
-//             response = await axios.post(URL + '/login', body, {
-//                 headers: {
-//                     'Accept': 'application/json',
-//                     'Content-Type': 'application/json'
-//                 },
-//                 crossDomain: true,
-//             });
-//         }
-//         //TODO: return login
-//     } catch(error) {
-//         console.log({error});
-//     }
-// }
-
-export async function getUser(user_id, password, is_teacher) {
+export async function getUser(user_id, is_teacher) {
         console.log("getUser");
         console.log(user_id);
     if (is_teacher) {
