@@ -200,3 +200,11 @@ body {
 }
 
 /* End Switch Style */
+
+.challenge-complete {
+  color: green;
+}
+
+.challenge-incomplete {
+  color: red;
+}
