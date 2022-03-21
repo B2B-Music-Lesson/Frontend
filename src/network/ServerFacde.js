@@ -56,52 +56,64 @@ export async function createUser(firstName, lastName, password, is_teacher, emai
 }
 
 //TODO: test
-export async function login(user_id, password, is_teacher) {
-    console.log("login");
-    const body =  {
-        teacher_id: user_id,
-        password: password,
-    };
+// export async function login(user_id, password, is_teacher) {
+//     console.log("login");
+//     const body =  {
+//         teacher_id: user_id,
+//         password: password,
+//     };
 
-    try {
-        var response;
-        if (is_teacher) {
-            response = await axios.post(URL + '/loginTeacher', body, {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                crossDomain: true,
-            });
-        } else {
-            response = await axios.post(URL + '/login', body, {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                crossDomain: true,
-            });
-        }
-        //TODO: return login
-    } catch(error) {
-        console.log({error});
-    }
-}
+//     try {
+//         var response;
+//         if (is_teacher) {
+//             response = await axios.post(URL + '/loginTeacher', body, {
+//                 headers: {
+//                     'Accept': 'application/json',
+//                     'Content-Type': 'application/json'
+//                 },
+//                 crossDomain: true,
+//             });
+//         } else {
+//             response = await axios.post(URL + '/login', body, {
+//                 headers: {
+//                     'Accept': 'application/json',
+//                     'Content-Type': 'application/json'
+//                 },
+//                 crossDomain: true,
+//             });
+//         }
+//         //TODO: return login
+//     } catch(error) {
+//         console.log({error});
+//     }
+// }
 
-export async function getUser(user_id) {
+export async function getUser(user_id, password, is_teacher) {
         console.log("getUser");
         console.log(user_id);
+    if (is_teacher) {
+
+         const sendGetRequest = async () => {
+            try {
+                const resp = await axios.get(URL + '/getTeacher?teacher_id=' + user_id);
+                console.log({resp});
+            } catch (err) {
+                console.error({err});
+            }
+        };
+        sendGetRequest();  
+    }
+    else {
         const sendGetRequest = async () => {
             try {
                 const resp = await axios.get(URL + '/user?user_id=' + user_id);
                 console.log({resp});
             } catch (err) {
-                // Handle Error Here
                 console.error({err});
             }
         };
-        sendGetRequest();
-        //TODO: return resp.user?
+        sendGetRequest();  
+    }
 }
 
 //TODO: Test
