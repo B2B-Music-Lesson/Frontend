@@ -133,13 +133,13 @@ const ChallengeExam = () => {
 
   return (
     <ExamWrapper>
-      <ToastContainer
+      {/* <ToastContainer
         position="top-center"
         pauseOnHover
         className="danger"
         center
         style={{ width: "50vw"}}
-      />
+      /> */}
       <ExamTitle>Treble Clef Space Notes</ExamTitle>
       <QuestionNumber>
         Question {questionNumber + 1} / {QUESTIONS.length}:
@@ -164,15 +164,15 @@ const ChallengeExam = () => {
         selected={selected}
         setSelected={setSelected}
       />
-      {/* {!answerHidden && (
+      {!answerHidden && (
         <ResponseBox
           answer={answer}
           guess={selected}
           explanation={EXPLANATIONS[answer]}
         ></ResponseBox>
-      )} */}
+      )}
       <ExamFooter>
-        <SoundfontProvider
+        {/* <SoundfontProvider
           instrumentName="acoustic_grand_piano"
           audioContext={audioContext}
           hostname={soundfontHostname}
@@ -187,7 +187,7 @@ const ChallengeExam = () => {
               onPlayNoteInput={(midiNumber) => saveNote(midiNumber)}
             />
           )}
-        />
+        /> */}
         {answerHidden ? (
           <BaseButton
             onClick={() => {
