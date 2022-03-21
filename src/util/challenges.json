@@ -3,27 +3,27 @@
     "challenges": [
         {
             "id": 5,
-            "type": "piano",
-            "title": "Challenge Exam #1",
-            "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
-            "mutedText": "Average completion time: 15 minutes",
-            "questions": ["F", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
+            "type": "note-name",
+            "title": "Treble Clef Space Notes - 1",
+            "subtext": "Match the four treble clef space notes with their letter names",
+            "mutedText": "Average completion time: 5 minutes",
+            "questions": ["E", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
         },
         {
             "id": 2,
-            "type": "piano",
-            "title": "Challenge Exam #2",
-            "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
-            "mutedText": "Average completion time: 15 minutes",
-            "questions": ["G", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
+            "type": "name-key",
+            "title": "Treble Clef Space Notes - 2",
+            "subtext": "Match the the keys on the piano with their note names",
+            "mutedText": "Average completion time: 5 minutes",
+            "questions": ["A", "F", "C", "A", "E", "C", "E", "A", "F", "E"]
         },
         {
             "id": 3,
-            "type": "piano",
-            "title": "Challenge Exam #3",
-            "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque id nibh. Pretium quam vulputate dignissim suspendisse in est ante.",
-            "mutedText": "Average completion time: 15 minutes",
-            "questions": ["C", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
+            "type": "note-key",
+            "title": "Treble Clef Space Notes - 3",
+            "subtext": "Final test! Match the notes on the treble clef to the keys on the piano",
+            "mutedText": "Average completion time: 5 minutes",
+            "questions": ["C", "A", "F", "E", "F", "C", "A", "E", "C", "A"]
         }
 
     ]
