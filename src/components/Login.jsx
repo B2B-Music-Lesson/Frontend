@@ -36,13 +36,14 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
               />
 
               <div class="checkbox mb-3"></div>
-              <Link to="/challenges">
-               <FormGroup>
+              <FormGroup>
                 <FormControlLabel control={<Checkbox defaultChecked />}
                   checked={is_teacher}
                   onChange={handleOnChange}
                   label="Sign in as Teacher?" />
               </FormGroup>
+              <Link to="/challenges">
+               
               <button
                 class="btn btn-lg btn-primary btn-block"
                 onClick={() => getUser(user, password, is_teacher)}
