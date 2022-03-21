@@ -41,7 +41,7 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
               </FormGroup>
               <button
                 class="btn btn-lg btn-primary btn-block"
-                onClick={() => getUser(user, password, is_teacher)}
+                onClick={() => getUser(user, is_teacher)}
               >
                 Sign in
               </button>{" "}
