@@ -61,9 +61,10 @@ export async function createUser(
   }
 }
 
-//TODO: test
+
 export async function login(user_id, password, is_teacher) {
   console.log("login");
+  console.log("teacher value", is_teacher)
   try {
     var response;
     if (is_teacher) {
@@ -71,7 +72,7 @@ export async function login(user_id, password, is_teacher) {
         teacher_id: user_id,
         password: password,
       };
-      response = await axios.post(URL + "/loginTeacher?", body, {
+      response = await axios.post(URL + "/loginTeacher", body, {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -84,7 +85,7 @@ export async function login(user_id, password, is_teacher) {
         user_id: user_id,
         password: password,
       };
-      response = await axios.post(URL + "/login?", body, {
+      response = await axios.post(URL + "/login", body, {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -93,7 +94,7 @@ export async function login(user_id, password, is_teacher) {
       });
       console.log(response);
     }
-    //TODO: return login
+    //TODO: check return login
   } catch (error) {
     console.log({ error });
   }

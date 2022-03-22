@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { getUser } from "../network/ServerFacde";
+import {login} from "../network/ServerFacde";
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -34,19 +34,16 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
                 required=""
                 onChange={(e) => setPassword(e.target.value)}
               />
-
-              <div class="checkbox mb-3"></div>
               <FormGroup>
-                <FormControlLabel control={<Checkbox defaultChecked />}
+                <FormControlLabel control={<Checkbox defaultValue={false} />}
                   checked={is_teacher}
                   onChange={handleOnChange}
-                  label="Sign in as Teacher?" />
+                  label="Log In as Teacher?" />
               </FormGroup>
-              <Link to="/challenges">
-               
-              <button
+              <Link to="/challenges">               
+            <button
                 class="btn btn-lg btn-primary btn-block"
-                onClick={() => getUser(user, is_teacher)}
+                onClick={() => login(user, password, is_teacher) }
               >
                 Sign in
               </button>{" "}
