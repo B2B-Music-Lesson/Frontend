@@ -64,7 +64,6 @@ const Register = ({firstName, lastName, password, email, is_teacher, setFirstNam
                 class="btn btn-lg btn-primary btn-block"
                 onClick={() => {
                   createUser(firstName, lastName, password, is_teacher, email)
-
                 }
                 }
               >
