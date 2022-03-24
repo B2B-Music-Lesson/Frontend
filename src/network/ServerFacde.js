@@ -12,6 +12,7 @@ export async function createUser(
 ) {
   console.log("createUser");
   const user_id = email;
+  console.log(is_teacher);
 
   if (!user_id) {
     throw new Error("Username must not be empty");
@@ -103,6 +104,7 @@ export async function login(user_id, password, is_teacher) {
 export async function getUser(user_id, is_teacher) {
   console.log("getUser");
   console.log(user_id);
+  console.log(is_teacher);
   if (is_teacher) {
     const sendGetRequest = async () => {
       try {

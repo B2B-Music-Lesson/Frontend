@@ -41,11 +41,14 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
                   label="Log In as Teacher?" />
               </FormGroup>
               <Link to="/challenges">               
-            <button
-                class="btn btn-lg btn-primary btn-block"
-                onClick={() => login(user, password, is_teacher) }
-              >
-                Sign in
+              <button
+                  class="btn btn-lg btn-primary btn-block"
+                  onClick={() => {
+                    login(user, password, is_teacher)
+                  }
+                  }
+                >
+                  Sign In
               </button>{" "}
               </Link>
             </div>

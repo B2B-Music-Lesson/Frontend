@@ -54,7 +54,7 @@ const Register = ({firstName, lastName, password, email, is_teacher, setFirstNam
                 required=""
               />
               <FormGroup>
-                <FormControlLabel control={<Checkbox defaultChecked />}
+                <FormControlLabel control={<Checkbox defaultValue={false} />}
                   checked={is_teacher}
                   onChange={handleOnChange}
                   label="Are you a teacher?" />

@@ -35,7 +35,7 @@ function LoginPage() {
           <div class="forms">
             {!isLogin ? 
             (
-              <Login user={user} setUserName={setUserName} password={password} setPassword={setPassword}/>)
+              <Login user={user} setUserName={setUserName} password={password} setPassword={setPassword} is_teacher={is_teacher} handleOnChange={handleOnChange}/>)
              : 
              (
               <Register firstName={firstName} lastName={lastName} email={email} password={password} setFirstName={setFirstName} setLastName={setLastName}
