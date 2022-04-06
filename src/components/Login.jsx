@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {login} from "../network/ServerFacde";
+import {login , isValidEmail} from "../network/ServerFacde";
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-
-
 const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnChange}) => {
     return (
         <div class="col-sm login-form">

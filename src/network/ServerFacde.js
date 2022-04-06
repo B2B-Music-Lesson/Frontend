@@ -184,6 +184,14 @@ export async function setScore(user_id, quizz_id, correctNum, totalNum) {
     console.log({ error });
   }
 }
+export function isValidEmail(email){
+  let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(!regEmail.test(email)){
+      return false
+    }
+  return true
+}
+
 
 //TODO: test
 export async function getTeachers() {
