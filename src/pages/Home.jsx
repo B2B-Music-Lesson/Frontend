@@ -88,7 +88,7 @@ function Home() {
                                 <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/414AjNCPkuL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg" alt="..."/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Piano</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="/challengeExam"><h5 class="card-title mb-3">Piano Sight Reading</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" href="/challengeExam/5"><h5 class="card-title mb-3">Piano Sight Reading</h5></a>
                                     <p class="card-text mb-0">Master your sight reading skills with this new list of flashcards. </p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
@@ -108,7 +108,7 @@ function Home() {
                                 <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41O3Bnapl6L._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg" alt="..."/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Trumpet</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="/challengeExam"><h5 class="card-title mb-3">Basics of Trumpet</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" href="/challengeExam/2"><h5 class="card-title mb-3">Basics of Trumpet</h5></a>
                                     <p class="card-text mb-0">Learn the basics of playing the trumpet through easy to use flashcards.</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
@@ -128,7 +128,7 @@ function Home() {
                                 <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41%2BclXdQkgL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg" alt="..."/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Piano</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="/challengeExam"><h5 class="card-title mb-3">Piano Chords Made Easy</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" href="/challengeExam/3"><h5 class="card-title mb-3">Piano Chords Made Easy</h5></a>
                                     <p class="card-text mb-0">These flashcards will make your chord recognition 20%.</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
