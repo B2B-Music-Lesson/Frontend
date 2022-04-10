@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://ptgocc9wd0.execute-api.us-west-2.amazonaws.com/prod";
+const URL = "https://k56v3bwqca.execute-api.us-west-2.amazonaws.com/prod";
 
 //TODO: Test
 export async function createUser(
@@ -215,7 +215,7 @@ export async function getUserChallenge(user_id, exam_id) {
   }
   const sendGetRequest = async () => {
     try {
-      const resp = await axios.get(URL + "/getUserChallenge?user_id=" + user_id + "&exam_id=" + exam_id);
+      const resp = await axios.get(URL + "/getUserChallenge?user_id=" + user_id + "&challenge_id=" + exam_id);
       console.log({ resp });
     } catch (err) {
       // Handle Error Here
@@ -234,7 +234,7 @@ export async function addUserChallenge(user_id, exam_id, isCompleted, totalNumbe
 
         const body = {
           user_id: user_id,
-          exam_id: exam_id,
+          challenge_id: exam_id,
           isCompleted: isCompleted,
           totalNumber: totalNumber,
           correctNumber: correctNumber,
