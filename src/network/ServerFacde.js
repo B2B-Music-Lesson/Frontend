@@ -210,6 +210,9 @@ export async function getTeachers() {
 //TODO: test
 export async function getUserChallenge(user_id, exam_id) {
   console.log("getUserChallenge")
+  if (!user_id && !exam_id) {
+    throw new Error("ids cannot be empty")
+  }
   const sendGetRequest = async () => {
     try {
       const resp = await axios.get(URL + "/getUserChallenge?user_id=" + user_id + "&exam_id=" + exam_id);
