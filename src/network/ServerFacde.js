@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "https://ptgocc9wd0.execute-api.us-west-2.amazonaws.com/prod";
+const URL = "https://k56v3bwqca.execute-api.us-west-2.amazonaws.com/prod";
 
 //TODO: Test
 export async function createUser(
@@ -195,6 +195,7 @@ export function isValidEmail(email) {
 
 //TODO: test
 export async function getTeachers() {
+  console.log("getTeachers")
   const sendGetRequest = async () => {
     try {
       const resp = await axios.get(URL + "/getTeachers");
@@ -206,3 +207,96 @@ export async function getTeachers() {
   };
   sendGetRequest();
 }
+
+//TODO: test
+export async function getUserChallenge(user_id, exam_id) {
+  console.log("getUserChallenge")
+  if (!user_id && !exam_id) {
+    throw new Error("ids cannot be empty")
+  }
+  const sendGetRequest = async () => {
+    try {
+      const resp = await axios.get(URL + "/getUserChallenge?user_id=" + user_id + "&challenge_id=" + exam_id);
+      console.log({ resp });
+    } catch (err) {
+      // Handle Error Here
+      console.error({ err });
+    }
+  };
+  sendGetRequest();
+}
+
+export async function addUserChallenge(user_id, exam_id, isCompleted, totalNumber, correctNumber) {
+    console.log("addUserChallenges")
+    try {
+        if (!user_id && !exam_id) {
+            throw new Error("ids cannot be empty")
+        }
+
+        const body = {
+          user_id: user_id,
+          challenge_id: exam_id,
+          isCompleted: isCompleted,
+          totalNumber: totalNumber,
+          correctNumber: correctNumber,
+        };
+        response = await axios.post(URL + "/addUserChallenge", body, {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          crossDomain: true,
+        });
+        console.log(response);
+      //TODO: check return login
+    } catch (error) {
+      console.log({ error });
+    }
+  }
+
+  export async function getChallenges() {
+    console.log("getChallenges")
+    const sendGetRequest = async () => {
+      try {
+        const resp = await axios.get(URL + "/getChallenges");
+        console.log({ resp });
+      } catch (err) {
+        // Handle Error Here
+        console.error({ err });
+      }
+    };
+    sendGetRequest();
+  }
+  
+  export async function addChallenge(id, type, title, subtext, mutedText, questions) {
+      try {
+          if (id === null || id === undefined) {
+              throw new Error("id cannot be empty")
+          }
+          if (!Array.isArray(questions) && questions.length > 0) {
+              throw new Error("questions must be an array with at least one question")
+          }
+  
+          const body = {
+            challenge_id: id,
+            type: type,
+            title: title,
+            subtext: subtext,
+            mutedText: mutedText,
+            questions: questions,
+          };
+          response = await axios.post(URL + "/addChallenge", body, {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            crossDomain: true,
+          });
+          console.log(response);
+        //TODO: check return login
+      } catch (error) {
+        console.log({ error });
+      }
+    }
+  
+
