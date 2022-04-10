@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
 import {login , isValidEmail} from "../network/ServerFacde";
@@ -6,6 +6,9 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnChange}) => {
+
+  const [currUser, setCurrUser] = useState("");
+
     return (
         <div class="col-sm login-form">
               <label for="inputEmail" class="sr-only">
@@ -42,7 +45,8 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
               <button
                   class="btn btn-lg btn-primary btn-block"
                   onClick={() => {
-                    login(user, password, is_teacher)
+                    let response = login(user, password, is_teacher)
+                    setCurrUser(response.firstName)
                   }
                   }
                 >
