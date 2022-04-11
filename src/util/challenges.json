@@ -2,12 +2,14 @@
 {
     "challenges": [
         {
-            "id": 5,
+            "id": 1,
             "type": "note-name",
             "title": "Treble Clef Space Notes - 1",
             "subtext": "Match the four treble clef space notes with their letter names",
             "mutedText": "Average completion time: 5 minutes",
-            "questions": ["E", "A", "E", "C", "A", "F", "E", "F", "C", "A"]
+            "questions": ["E", "A", "E", "C", "A", "F", "E", "F", "C", "A"],
+            "score": "7/10",
+            "completed": 1
         },
         {
             "id": 2,
@@ -15,7 +17,9 @@
             "title": "Treble Clef Space Notes - 2",
             "subtext": "Match the the keys on the piano with their note names",
             "mutedText": "Average completion time: 5 minutes",
-            "questions": ["A", "F", "C", "A", "E", "C", "E", "A", "F", "E"]
+            "questions": ["A", "F", "C", "A", "E", "C", "E", "A", "F", "E"],
+            "score": "0/10",
+            "completed": 0
         },
         {
             "id": 3,
@@ -23,7 +27,38 @@
             "title": "Treble Clef Space Notes - 3",
             "subtext": "Final test! Match the notes on the treble clef to the keys on the piano",
             "mutedText": "Average completion time: 5 minutes",
-            "questions": ["C", "A", "F", "E", "F", "C", "A", "E", "C", "A"]
+            "questions": ["C", "A", "F", "E", "F", "C", "A", "E", "C", "A"],
+            "score": "1/10",
+            "completed": 1
+        },{
+            "id": 4,
+            "type": "note-key",
+            "title": "Treble Clef Space Notes - 4",
+            "subtext": "Match the four treble clef space notes with their letter names",
+            "mutedText": "Average completion time: 5 minutes",
+            "questions": ["C", "F", "E", "C", "A", "F", "B", "F", "C", "A"],
+            "score": "0/10",
+            "completed": 0
+        },
+        {
+            "id": 5,
+            "type": "name-key",
+            "title": "Treble Clef Space Notes - 5",
+            "subtext": "Match the the keys on the piano with their note names",
+            "mutedText": "Average completion time: 5 minutes",
+            "questions": ["B", "F", "C", "A", "E", "C", "E", "A", "F", "E"],
+            "score": "0/10",
+            "completed": 0
+        },
+        {
+            "id": 6,
+            "type": "note-key",
+            "title": "Treble Clef Space Notes - 6",
+            "subtext": "Final test! Match the notes on the treble clef to the keys on the piano",
+            "mutedText": "Average completion time: 5 minutes",
+            "questions": ["E", "A", "F", "E", "F", "C", "A", "E", "C", "A"],
+            "score": "0/10",
+            "completed": 0
         }
 
     ]

@@ -8,6 +8,7 @@ import {
   Challenges,
   ChallengeExam,
 } from "./pages";
+import TeacherPage from "./pages/TeacherPage";
 function App() {
   return (
     <div className="App bgColor">
@@ -26,6 +27,12 @@ function App() {
             path="/challengeExam/:id"
             exact
             component={(Navigation) => <ChallengeExam />}
+          />
+
+          <Route
+            path="/teachers"
+            exact
+            component={(Navigation) => <TeacherPage />}
           />
 
           <Route component={PageNotFound} />

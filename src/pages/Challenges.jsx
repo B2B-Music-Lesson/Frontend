@@ -29,6 +29,8 @@ function Challenges() {
             buttonText={challenge.buttonText} 
             mutedText={challenge.mutedText} 
             link={challenge.link}
+            score={challenge.score}
+            completed={challenge.completed}
             />
           )}
         </div>

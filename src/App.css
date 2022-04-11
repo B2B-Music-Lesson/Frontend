@@ -208,3 +208,9 @@ body {
 .challenge-incomplete {
   color: red;
 }
+
+.teacher-page {
+  height: 100vh;
+  width: 50%;
+  margin: 10% auto;
+}

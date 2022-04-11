@@ -19,13 +19,13 @@ function Card(props) {
           <p class="card-text">
             <small class="text-muted">{props.mutedText}</small>
           </p>
-          {completed ? (
+          {props.completed ? (
             <p className='challenge-complete'>Completed</p>
           ) :
           ( <p className='challenge-incomplete'>Not Completed</p>)}
-          <p>Score: {score}</p>
+          <p>Score: {props.score}</p>
           <Link to={`/challengeExam/${props.id}`} onClick={() => window.scrollTo(0, 0)}>
-              {completed ? <button href="#" className="stretched-link btn btn-primary mb-3">Practice Again</button> : 
+              {props.completed ? <button href="#" className="stretched-link btn btn-primary mb-3">Practice Again</button> : 
               <button href="#" className="stretched-link btn btn-primary mb-3">Practice Now</button>}
           </Link>
         </div>
