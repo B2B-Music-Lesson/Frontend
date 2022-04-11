@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { ActionBanner } from ".";
 
 import Login from "../components/Login";
@@ -14,10 +14,12 @@ function LoginPage() {
   const [is_teacher, setTeacher] = useState(false);
   const [user, setUserName] = useState("");
   const [isLogin, setIsLogin] = useState(true);
+  const [currUser, setCurrUser] = useState();
 
   const handleOnChange = () => {
     setTeacher(!is_teacher);
   };
+
 
   return (
     <div className="login">
@@ -35,7 +37,7 @@ function LoginPage() {
           <div class="forms">
             {!isLogin ? 
             (
-              <Login user={user} setUserName={setUserName} password={password} setPassword={setPassword} is_teacher={is_teacher} handleOnChange={handleOnChange}/>)
+              <Login user={user} setUserName={setUserName} password={password} setPassword={setPassword} is_teacher={is_teacher} handleOnChange={handleOnChange} currUser={currUser} setCurrUser={setCurrUser}/>)
              : 
              (
               <Register firstName={firstName} lastName={lastName} email={email} password={password} setFirstName={setFirstName} setLastName={setLastName}

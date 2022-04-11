@@ -1,13 +1,30 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import React, {useCallback, useEffect, useState} from "react";
+import { Link, useHistory, withRouter } from "react-router-dom";
 
 import {login , isValidEmail} from "../network/ServerFacde";
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnChange}) => {
 
-  const [currUser, setCurrUser] = useState("");
+const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnChange, setCurrUser, currUser}) => {
+
+  const history = useHistory
+
+  const fetchResponse = async () => {
+    let response =  await login(user, password, is_teacher)
+    if (response.status == 200) {
+    
+    setCurrUser(response.data.firstName + " " + response.data.lastName)
+     
+    } else {
+      alert("This user does not exist")
+    }    
+  }
+
+  
+
+
+
 
     return (
         <div class="col-sm login-form">
@@ -41,20 +58,21 @@ const Login = ({user, password, setUserName, setPassword, is_teacher, handleOnCh
                   onChange={handleOnChange}
                   label="Log In as Teacher?" />
               </FormGroup>
-              <Link to="/challenges">               
+              <Link to="/challenges"
+                
+              >
               <button
                   class="btn btn-lg btn-primary btn-block"
-                  onClick={() => {
+                  onClick={()=> {
                     let response = login(user, password, is_teacher)
-                    setCurrUser(response.firstName)
-                  }
-                  }
+                  }}
                 >
                   Sign In
               </button>{" "}
               </Link>
+            
             </div>
     )
 }
 
-export default Login;
+export default withRouter(Login);

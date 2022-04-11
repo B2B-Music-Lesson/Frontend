@@ -8,7 +8,6 @@ import {
   Challenges,
   ChallengeExam,
 } from "./pages";
-
 function App() {
   return (
     <div className="App bgColor">

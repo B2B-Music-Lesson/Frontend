@@ -11,14 +11,13 @@ function Challenges() {
     setUserName(username);
   }, [userName])
 
-  
   return (
     <div className="challenges-page">
       
       {/* Cards */}
       {/* Make sure each item in a row is a card */}
       <div class="container">
-      <ActionBanner headerText={`Welcome to the Challenges Page ${userName}`} />
+      <ActionBanner headerText={`Welcome to the Challenges Page ${window.name}`} />
         <div class="row row-cols-2 row-cols-lg-3 gb-2 g-lg-3 ">
           {challenges.challenges.map(challenge => 
             <Card 
